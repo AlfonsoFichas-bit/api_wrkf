@@ -11,5 +11,5 @@ app.route('/api/v1', v1);
 
 if (import.meta.main) {
   Deno.serve(app.fetch);
-  console.log('Hono server listening on http://localhost:8000');
+  console.log('Servidor Hono en ejecución en el puerto 8000. Visita: http://localhost:8000');
 }
