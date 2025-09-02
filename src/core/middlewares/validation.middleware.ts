@@ -9,7 +9,10 @@ export const validate = (schema: z.ZodObject<any, any>) =>
       await next();
     } catch (error) {
       if (error instanceof z.ZodError) {
-        return c.json({ errors: error.errors }, 400);
+        return new Response(JSON.stringify({ errors: error.errors }), {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        });
       }
       return c.json({ message: "Internal server error" }, 500);
     }
