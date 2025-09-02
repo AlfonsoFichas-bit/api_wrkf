@@ -4,7 +4,7 @@ import v1 from './src/api/v1/index.ts';
 const app = new Hono();
 
 app.get('/', (c) => {
-  return c.text('Hello, Hono!');
+  return c.text('Hola, Hono!\nVisita /api/v1 para ver la API');
 });
 
 app.route('/api/v1', v1);
