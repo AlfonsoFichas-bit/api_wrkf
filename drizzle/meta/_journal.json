@@ -15,6 +15,13 @@
       "when": 1756341930855,
       "tag": "0001_heavy_doomsday",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1756784459226,
+      "tag": "0002_aspiring_raza",
+      "breakpoints": true
     }
   ]
 }

@@ -24,3 +24,15 @@ export const createUser = async (c: Context) => {
     return c.json({ message: "Failed to create user", error: result.error }, 500);
   }
 };
+
+export const getMe = async (c: Context) => {
+  const userId = c.get("userId"); // Get userId from context set by authMiddleware
+  if (!userId) {
+    return c.json({ message: "User ID not found in context" }, 500); // Should not happen if middleware works
+  }
+  const user = await userService.getUserById(userId);
+  if (!user) {
+    return c.json({ message: "User not found" }, 404);
+  }
+  return c.json(user);
+};
